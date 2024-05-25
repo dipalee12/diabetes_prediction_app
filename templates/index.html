@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: url("./static/bg.png") no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .wrapper {
+            width: 800px;
+            background-color: transparent;
+            color: #fff;
+            border-radius: 10px;
+            padding: 30px 40px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(40px);
+            -webkit-box-shadow: 2px 2px 17px 6px rgba(0, 0, 0, 0.21);
+            box-shadow: 2px 2px 17px 6px rgba(0, 0, 0, 0.21);
+        }
+
+        .wrapper h1 {
+            font-size: 36px;
+            text-align: center;
+            color: #03967e;
+        }
+
+        .wrapper .input-box {
+            display: flex;
+            position: relative;
+            width: 100%;
+            height: 50px;
+            margin: 35px 0;
+        }
+
+        .input-box input {
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            border: none;
+            outline: none;
+            border: 3px solid rgba(1, 94, 78, 0.2);
+            border-radius: 40px;
+            font-size: 15px;
+            color: #003065;
+            padding: 20px 45px 20px 20px;
+            margin: 0 10px;
+        }
+
+        .input-box input::placeholder {
+            color: #666666;
+        }
+
+        .input-box i {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+        }
+
+        .wrapper .remember-forgot {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            margin: -15px 0 15px;
+        }
+
+        .remember-forgot label input {
+            accent-color: #fff;
+            margin-right: 3px;
+        }
+
+        .remember-forgot a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .remember-forgot a:hover {
+            text-decoration: underline;
+            color: #568b8c;
+        }
+
+        .wrapper .btn {
+            width: calc(100%/2);
+            height: 45px;
+            background-color: #1de1c0;
+            border: none;
+            outline: none;
+            border-radius: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            font-size: 16px;
+            color: #fff;
+            font-weight: 600;
+            transition: all 0.5s ease-out;
+            display: block;
+            margin: 20px auto;
+        }
+        .wrapper .btn:hover {
+            background-color: #09c2a3;
+            color: #fff;
+        }
+
+        .wrapper .register-link {
+            font-size: 14px;
+            text-align: center;
+            margin: 20px 0 15px;
+        }
+
+        .register-link p a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .register-link p a:hover {
+            text-decoration: underline;
+            color: #568b8c;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <form action="/predict" method="POST">
+            <h1>Diabetes Predictor</h1>
+            <div class="input-box">
+                <input type="text" name="pregnancies" placeholder="Number of Pregnancies eg. 0" required />
+                <input type="text" name="glucose" placeholder="Glucose (mg/dl) eg.80" required />
+            </div>
+            <div class="input-box">
+                <input type="text" name="blood_pressure" placeholder="Blood Pressure (mmHg) eg. 89" required />
+                <input type="text" name="skin_thickness" placeholder="Skin Thickness (mm) eg.20" required />
+            </div>
+            <div class="input-box">
+                <input type="text" name="insulin" placeholder="Insulin (IU/ml) eg. 450" required />
+                <input type="text" name="bmi" placeholder="Body Mass Index (kg/m²) eg. 23.1" required />
+            </div>
+            <div class="input-box">
+                <input type="text" name="diabetes_pedigree_function" placeholder="Diabetes Pedigree Function eg. 0.52" required />
+                <input type="text" name="age" placeholder="Age (year) eg. 34" required />
+            </div>
+            <button class='btn' type="submit">Predict</button>
+        </form>
+    </div>
+</body>
+z
+</html>
